@@ -2,8 +2,8 @@ interface Scientist {
     name: string;
     imageId: string;
     profession: string;
-    awards: string;
-    discovery: string;
+    awards: string[];
+    discovery: string[];
 }
 
 export interface GalleryProps {
