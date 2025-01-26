@@ -4,10 +4,12 @@
 // import styles from '@/styles/Home.module.css'
 import Profile from './components/profile'
 import Gallery from "./qcomps/gallery_props";
+import List from "./qcomps/list_keys_id";
 
 export default function Home() {
   return (
     //<Profile />
-      <Gallery/>
+     // <Gallery/>
+      <List/>
   )
 }
