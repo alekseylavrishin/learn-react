@@ -20,7 +20,11 @@ export default function Gallery() {
    * The handleNextClick function increments the index state variable to display the next sculpture.
    */
   function handleNextClick() {
-    setIndex(index + 1);
+      if(index < sculptureList.length - 1) {
+          setIndex(index + 1);
+      } else {
+          setIndex(0);
+      }
   }
 
   /**
