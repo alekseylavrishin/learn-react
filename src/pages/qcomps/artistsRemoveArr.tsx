@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {func} from "prop-types";
 
 let initialArtists = [
   { id: 0, name: 'Marta Colvin Andrade' },
@@ -11,7 +12,6 @@ let initialArtists = [
  * When the delete button is pressed, the item should be deleted. 
  * However, this does not happen. Identify and fix the bugs.
  */
-
 export default function List() {
   const [artists, setArtists] = useState(
     initialArtists
@@ -25,7 +25,7 @@ export default function List() {
           <li key={artist.id}>
             {artist.name}{' '}
             <button onClick={() => {
-              artists.splice(artist.id, 1)
+                setArtists(artists.filter(a => a.id !== artist.id))
             }}>
               Delete
             </button>

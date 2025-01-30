@@ -7,6 +7,7 @@ import Gallery from "@/pages/qcomps/state";
 import Form from "@/pages/qcomps/stuckForm";
 import RequestTracker from "@/pages/qcomps/shoppingCart";
 import Scoreboard from "@/pages/qcomps/updObjectsForm";
+import List from "@/pages/qcomps/artistsRemoveArr";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       // <Gallery/>
       //<Form/>
       //<RequestTracker/>
-      <Scoreboard/>
+      //<Scoreboard/>
+      <List/>
   )
 }
