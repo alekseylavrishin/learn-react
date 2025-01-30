@@ -5,11 +5,13 @@
 import Profile from './components/profile'
 import Gallery from "@/pages/qcomps/state";
 import Form from "@/pages/qcomps/stuckForm";
+import RequestTracker from "@/pages/qcomps/shoppingCart";
 
 export default function Home() {
   return (
     //<Profile />
       // <Gallery/>
-      <Form/>
+      //<Form/>
+      <RequestTracker/>
   )
 }
