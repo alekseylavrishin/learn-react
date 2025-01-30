@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { ItemListProps } from '../../types/arrObj';
 
+type ArtWorkListType = {
+    id: number,
+    title: string,
+    seen: boolean
+}
+
 let nextId = 3;
 const initialList = [
   { id: 0, title: 'Big Bellies', seen: false },
@@ -15,38 +21,41 @@ const initialList = [
  */
 export default function BucketList() {
   const [myList, setMyList] = useState(initialList);
-  const [yourList, setYourList] = useState(
-    initialList
-  );
+  const [yourList, setYourList] = useState(initialList);
 
+    /**
+     * Updates the seen property of the artwork of the provided artWorkId stored in the provided aList.
+     * @param aList - The list storing the artwork to be updated - either myList or yourList.
+     * @param artWorkId - The id of the artwork to update.
+     * @param nextSeen - The value with which to update the seen property of the artwork.
+     */
+  function toggleList(aList: ArtWorkListType[], artWorkId: number, nextSeen: boolean) {
+      return aList.map(e => {
+          if(e.id === artWorkId) {
+              return {...e, seen: nextSeen}
+          } else {
+              return e;
+          }
+      })
+  }
   /**
-   * The function updates the seen property of the artwork with the given id in the mylist.
+   * Calls toggleList() to update the seen property of the artwork with the given id stored in mylist.
    * @param artworkId - the id of the artwork to toggle
    * @param nextSeen - the value with which to update the seen property of the artwork
    */
   function handleToggleMyList(artworkId: number, nextSeen: boolean) {
-    const tmpList = myList.map(e => {
-        if (e.id === artworkId) {
-            e.seen = nextSeen
-        }
-        return e
-    });
-    setMyList(tmpList);
+      const tmpList = toggleList(myList, artworkId, nextSeen);
+      setMyList(tmpList);
   }
 
   /**
-   * The function updates the seen property of the artwork with the given id in the yourlist.
+   * Calls toggleList() to update the seen property of the artwork with the given id stored in yourList.
    * @param artworkId - the id of the artwork to toggle
    * @param nextSeen - the value with which to update the seen property of the artwork
    */
   function handleToggleYourList(artworkId: number, nextSeen: boolean) {
-    const tmpList = yourList.map(e => {
-        if (e.id === artworkId) {
-            e.seen = nextSeen
-        }
-        return e
-    });
-    setYourList(tmpList);
+      const tmpList = toggleList(yourList, artworkId, nextSeen);
+      setYourList(tmpList);
   }
 
   return (

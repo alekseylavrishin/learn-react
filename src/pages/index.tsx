@@ -8,6 +8,7 @@ import Form from "@/pages/qcomps/stuckForm";
 import RequestTracker from "@/pages/qcomps/shoppingCart";
 import Scoreboard from "@/pages/qcomps/updObjectsForm";
 import List from "@/pages/qcomps/artistsRemoveArr";
+import BucketList from "@/pages/qcomps/arrObj";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       //<Form/>
       //<RequestTracker/>
       //<Scoreboard/>
-      <List/>
+      //<List/>
+      <BucketList/>
   )
 }
